@@ -19,10 +19,10 @@ form.addEventListener("submit", e => {
           data = data.data;
           btn.removeAttribute("disabled");
           weather.classList.remove("error");
-          weather.innerHTML = `<b>Location: </b> <span>${data.location}</span><br>
-                              <b>Weather Summary: </b> <span></span>${data.summary}<br>
-                              <b>Temprature: </b> <span>${data.temp} C</span> <br>
-                              There is <b>${data.rain}%</b> chance of rain today.`;
+          weather.innerHTML = `<span>${data.location}</span><br>
+                              <span>${data.summary}</span><br>
+                              <span>${data.temp} C</span> <br>
+                              <span>There is <b>${data.rain}%</b> chance of rain today.</span>`;
         }
       });
     });
