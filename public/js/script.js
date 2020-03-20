@@ -7,7 +7,7 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   let addr = form.address;
   if (addr.value != "") {
-    fetch(`http://localhost:3000/weather?address=${addr.value}`).then(res => {
+    fetch(`/weather?address=${addr.value}`).then(res => {
       res.json().then(data => {
         weather.innerHTML = `There is <b>${data.temp}</b> in <b>${data.location}</b>`;
       });
