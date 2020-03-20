@@ -5,6 +5,7 @@ const btn = document.querySelector("#btn");
 form.addEventListener("submit", e => {
   e.preventDefault();
   btn.setAttribute("disabled", true);
+  weather.innerHTML = "Loading...";
   let addr = form.address;
   if (addr.value != "") {
     fetch(`/weather?address=${addr.value}`).then(res => {
