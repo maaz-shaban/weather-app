@@ -1,0 +1,46 @@
+body {
+  color: #333;
+  font-family: "Arial";
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer {
+  border-top: 1px solid grey;
+  margin-top: 20px;
+}
+
+footer p {
+  color: grey;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+header a {
+  text-decoration: none;
+  color: rgb(151, 151, 151);
+  font-family: "Arial";
+  font-size: 1.5rem;
+  padding: 4px 16px;
+}
+
+header a:hover {
+  color: rgb(104, 104, 104);
+}
+
+input {
+  font-size: 1.5rem;
+  margin: 1rem;
+  border: 1px solid lightgray;
+  padding: 4px;
+}
+
+button {
+  font-size: 1rem;
+  margin: 1rem;
+  border: 1px solid lightgray;
+  padding: 8px;
+}
