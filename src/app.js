@@ -2,6 +2,9 @@ const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
 
+const geocode = require("./utils.js/geocode");
+const forecast = require("./utils.js/forecast");
+
 const app = express();
 
 app.set("view engine", "hbs");
@@ -27,9 +30,32 @@ app.get("/weather", (req, res) => {
     return res.send({ error: "You have to provide address." });
   }
 
-  res.send({
-    location: req.query.address,
-    temp: 22.3
+  geocode(req.query.address, (err, body) => {
+    if (err != undefined) {
+      return res.send({
+        err: "Unable to connect to location service.",
+        data: undefined
+      });
+    }
+
+    forecast(body.lat, body.long, (err1, data) => {
+      if (err1 != undefined) {
+        return res.send({
+          err: "Unable to connect to location service.",
+          data: undefined
+        });
+      }
+
+      return res.send({
+        err: undefined,
+        data: {
+          temp: data.temp,
+          summary: data.summary,
+          rain: data.precip,
+          location: body.location
+        }
+      });
+    });
   });
 });
 

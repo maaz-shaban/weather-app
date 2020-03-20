@@ -8,12 +8,16 @@
 </head>
 
 <body>
-    {{>header}}
-    <form>
-        <input type="text" placeholder="Enter Location" name="address">
-        <button type="submit">Check Weather</button>
-    </form>
-    <p id="weather"></p>
+    <div>
+        <div>{{>header}}</div>
+        <div class="main">
+            <form>
+                <input type="text" placeholder="Enter Location" name="address">
+                <button type="submit" id="btn">Check Weather</button>
+                <p id="weather"></p>
+            </form>
+        </div>
+    </div>
     {{>footer}}
 
     <script src="./js/script.js"></script>

@@ -7,9 +7,9 @@ const forecast = (lat, long, cb) => {
     .get(url)
     .then(res => {
       cb(undefined, {
-        lat: res.features[0].center[1],
-        long: res.features[0].center[0],
-        location: res.features[0].place_name
+        temp: res.data.currently.temperature,
+        summary: res.data.currently.summary,
+        precip: res.data.currently.precipProbability
       });
     })
     .catch(err => cb("Unable to connect to location services.", undefined));

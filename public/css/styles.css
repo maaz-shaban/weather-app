@@ -4,6 +4,10 @@ body {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 footer {
@@ -43,4 +47,21 @@ button {
   margin: 1rem;
   border: 1px solid lightgray;
   padding: 8px;
+}
+
+.main {
+  flex-wrap: 1;
+}
+
+.error {
+  color: red;
+}
+
+#weather {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#weather span {
+  font-size: 1.3rem;
 }
